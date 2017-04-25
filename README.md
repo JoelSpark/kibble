@@ -21,6 +21,7 @@ Application ideas:
 
 # Standard libraries / functions
 The aim is to have a set of standard functinality that is available in the "main-branch" that can be merged into the specific applications. The following things come out-of-the-box:
+* Flask / Postgres / SQLAlchemy backend requirements
 
 ## Implented so far
 * virtualenv with Flask server
@@ -29,6 +30,7 @@ The aim is to have a set of standard functinality that is available in the "main
 * Auto-create history table for each table by default
 * Authentication using OAuth
 * CSS templates for standard pages and widgets
+* bash script for automating the per-app config
 
 # Setup Notes
 
@@ -42,12 +44,27 @@ Only required once, not for each application
 echo "source `which activate.sh`" >> ~/.bashrc
 source ~/.bashrc
 ```
+1. Install postgres on local machine
 
 ## New application Setup
 1. Clone kibble git repo
 1. Create new virtual environment using `virtualenv env`
 1. Create heroku production and staging apps with `heroku create X`
 1. Add remotes w/ `git remote add pro git@heroku.com:YOUR_APP_NAME.git`
+1. Configure heroku environment settings
+
+```
+heroku config:set APP_SETTINGS=config.StagingConfig --remote stage
+heroku config:set APP_SETTINGS=config.ProductionConfig --remote pro
+```
+1. Create psql database locally for development
+```
+psql
+CREATE DATABASE <application name>
+```
+1. Update the DATABASE_URL variable in .env to use the application name. 
+
+1. Setup 
 
 ## General notes
 * To update the requirements file, use `pip freeze > requirements.txt`
