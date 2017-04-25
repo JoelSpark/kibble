@@ -6,7 +6,8 @@
     * Flask
 
 * set up Heroku
-    * 
+    * create production and staging apps with `heroku create X`
+    * add remotes w/ `git add pro` and `git add stage`
 
 Notes:
 
