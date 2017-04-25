@@ -1,7 +1,6 @@
-
+# Overview
 
 Kibble is a set of scripts / templates for quickly creating simple apps for personal use that require a relational-database-type structure in the backend.
-# Overview
 
 The aim is to address a common application where:
 * want to track a set of genric objects (eg milestones, inventory items), with arbitrary properties
@@ -20,16 +19,34 @@ Application ideas:
 * project + resource + milestone management
 * requirement / test / result tracking system
 
+# Standard libraries / functions
+The aim is to have a set of standard functinality that is available in the "main-branch" that can be merged into the specific applications. The following things come out-of-the-box:
 
-# Per-app setup
+## Implented so far
+* virtualenv with Flask server
+
+## TODO
+* Auto-create history table for each table by default
+* Authentication using OAuth
+* CSS templates for standard pages and widgets
+
+# Setup Notes
 
 ## Host setup
-1. Clone kibble git repo
-1. Set up virtual environment
-1. Install Flask
+Only required once, not for each application
+1. Install virtualenv using `pip install virtualenv`
+1. Setup autoenv using `pip install autoenv`
+1. Install heroku CLI as per: https://devcenter.heroku.com/articles/heroku-cli
+1. Setup automatically entering the virtualenv:
+```
+echo "source `which activate.sh`" >> ~/.bashrc
+source ~/.bashrc
+```
 
-## Heroku Setup
-1. Create production and staging apps with `heroku create X`
+## New application Setup
+1. Clone kibble git repo
+1. Create new virtual environment using `virtualenv env`
+1. Create heroku production and staging apps with `heroku create X`
 1. Add remotes w/ `git remote add pro git@heroku.com:YOUR_APP_NAME.git`
 
 ## General notes
