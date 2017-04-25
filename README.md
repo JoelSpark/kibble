@@ -28,6 +28,7 @@ The aim is to have a set of standard functinality that is available in the "main
 
 ## TODO
 * Auto-create history table for each table by default
+* tagging infrastructure
 * Authentication using OAuth
 * CSS templates for standard pages and widgets
 * bash script for automating the per-app config
@@ -63,8 +64,12 @@ psql
 CREATE DATABASE <application name>
 ```
 1. Update the DATABASE_URL variable in .env to use the application name. 
-
-1. Setup 
+1. Setup models 
+1. Initialize alembic
+```
+python manage.py db init
+python manage.py db migrate
+```
 
 ## General notes
 * To update the requirements file, use `pip freeze > requirements.txt`
