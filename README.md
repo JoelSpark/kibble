@@ -4,6 +4,8 @@
 * set up virtual environment
 * install:
     * Flask
+
+* set up Heroku
     * 
 
 Notes:
