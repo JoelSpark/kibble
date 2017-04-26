@@ -46,6 +46,7 @@ echo "source `which activate.sh`" >> ~/.bashrc
 source ~/.bashrc
 ```
 1. Install postgres on local machine
+1. Install redis on local machine as per https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04
 
 ## New application Setup
 
