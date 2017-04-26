@@ -53,7 +53,7 @@ def index():
                 no_stop_words_count.items(),
                 key=operator.itemgetter(1),
                 reverse=True
-            )[10:]
+            )[:10]
             try:
                 result = Result(
                     url=url,
@@ -62,8 +62,7 @@ def index():
                 )
                 db.session.add(result)
                 db.session.commit()
-            except Exception as e:
-                print e
+            except:
                 errors.append("Unable to add item to database.")
     return render_template('index.html', errors=errors, results=results)
 

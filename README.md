@@ -48,6 +48,8 @@ source ~/.bashrc
 1. Install postgres on local machine
 
 ## New application Setup
+
+### Set up local development environment
 1. Clone kibble git repo
 1. Create new virtual environment using `virtualenv env`
 1. Create heroku production and staging apps with `heroku create X`
@@ -58,6 +60,8 @@ source ~/.bashrc
 heroku config:set APP_SETTINGS=config.StagingConfig --remote stage
 heroku config:set APP_SETTINGS=config.ProductionConfig --remote pro
 ```
+### Set up databases
+
 1. Create psql database locally for development
 ```
 psql
@@ -69,6 +73,14 @@ CREATE DATABASE <application name>
 ```
 python manage.py db init
 python manage.py db migrate
+```
+1. Add postgres add-ons to remotes
+```
+heroku addons:create heroku-postgresql:hobby-dev --app <app name>
+```
+1. Migrate development databases to staging
+```
+heroku run python manage.py db upgrade --app <app name>
 ```
 
 ## General notes
