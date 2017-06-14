@@ -7,7 +7,8 @@ from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 # application-specific imports
 from flask_login import LoginManager
-
+# blueprint imports
+from blueprints.home import home as home_blueprint
 
 # Set up Flask app
 app = Flask(__name__)
@@ -18,6 +19,9 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_message = "You must be logged in to access this page."
 login_manager.login_view = "auth.login"
+
+# register blueprints
+app.register_blueprint(home_blueprint)
 
 
 @app.route('/')

@@ -83,3 +83,8 @@ heroku run python manage.py db upgrade --app <app name>
 
 ## General notes
 * To update the requirements file, use `pip freeze > requirements.txt`
+migration:
+```
+python manage.py db migrate
+python manage.py db upgrade
+```
