@@ -1,21 +1,18 @@
 # Overview
 
-Kibble is a set of scripts / templates for quickly creating simple apps for personal use that require a relational-database-type structure in the backend.
+Kibble is a set of scripts / templates for quickly creating simple CRUD (Create, Read, Update, Delete) apps that require a relational-database-type structure in the backend.
 
-The aim is to address a common application where:
-* want to track a set of genric objects (eg milestones, inventory items), with arbitrary properties
-* there's some simple relationships between objects (parent/child, etc)
-* only have simple uses cases (view objects, filter, simple workflow / lifecycle)
-* would like to integrate with some tool (eg BambooHR, smartsheets, Asana, Github, Slack, etc) that has a well-published API
-* it's not for some large customer / official product, just aims to meet a personal / internal need (ie, not mission / product critical)
+The aim is to fill the gap for a tool where a set of spreadsheets is becoming too complex / slow, but an off-the-shelf dedicated solutions, is too complex, costly, or perscriptive of in terms of structure / workflow, or missing some key element.
 
-It aims to fill the gap for a tool where:
-* a set of spreadsheets is becoming too complex / slow / janky
-* there are likely off-the-shelf solutions, but they are too complex, fit the workflow, or are missing
+The common elements of the need are:
+* I want to track a set of genric objects, with their own attributes, and with some relationships between them
+* I have a loosely defined workflow, and just want to something that is CRUD and customizable.
+* It's not for some large customer / official product, just aims to meet a personal / internal need (ie, not mission / product critical)
+* (optionally) I would like to integrate with some external system that has a well-published API (eg BambooHR, smartsheets, Asana, Github, Slack, etc)
 
-Application ideas:
+Some example applications include:
 * home / hobby inventory system
-* ticket tracking / bug tracking + ranking system
+* ticket tracking / bug tracking with custom rankings
 * project + resource + milestone management
 * requirement / test / result tracking system
 
